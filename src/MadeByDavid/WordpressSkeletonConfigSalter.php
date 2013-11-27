@@ -5,6 +5,7 @@ namespace MadeByDavid;
 class WordpressSkeletonConfigSalter {
 
 	public static function test() {
+		var_dump(getcwd());
 		var_dump("test");
 	}
 
