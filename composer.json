@@ -15,11 +15,6 @@
 		"psr-0": {
 			"MadeByDavid": "src/"
 		}
-	},
-	"scripts": {
-		"post-package-install": [
-			"MadeByDavid\\WordpressSkeletonConfigSalter::test"
-		]
 	}
 }
 	
