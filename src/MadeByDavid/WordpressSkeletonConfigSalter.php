@@ -18,7 +18,6 @@ class WordpressSkeletonConfigSalter {
 
 	public static function salt() {
 
-
 		if (false === file_exists($configFile = self::getWPConfigFilename())) {
 			throw new \Exception('WP config file - '.$configFile.' not found.');
 		}
@@ -43,13 +42,11 @@ class WordpressSkeletonConfigSalter {
 			throw new \Exception('Empty salts were not found in the WP config file.');
 		}
 
-
 		if (false === file_put_contents($configFile, $newConfig)) {
 			throw new Exception('Unable to write to WP config file');
 		}
 
 		return true;
-
 
 	}
 
