@@ -1,0 +1,20 @@
+{
+	"name": "madebydavid/wordpress-skeleton-config-salter",
+	"description": "Salts the wp-config of madebydavid/wordpress-skeleton projects",
+	"authors" : [
+		{
+			"name": "madebydavid",
+			"email": "sutherland.dave@gmail.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3",
+		"ext-curl": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"MadeByDavid": "src/"
+		}
+	}
+}
+	
