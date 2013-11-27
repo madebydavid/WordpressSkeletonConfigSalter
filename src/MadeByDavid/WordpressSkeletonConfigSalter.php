@@ -23,16 +23,15 @@ class WordpressSkeletonConfigSalter {
 			throw new \Exception('WP config file - '.$configFile.' not found.');
 		}
 
-		if (0 === strlen($configFileContents = file_get_contents($configFile))) {
+		if (0 === strlen($config = file_get_contents($configFile))) {
 			throw new \Exception('WP config file is empty.');
 		}
-
 
 		if (false === file_exists($emptySaltsFile = self::getEmptySaltsFilename())) {
 			throw new \Exception('Empty salts file - '.$emptySaltsFile.' not found.');
 		}
 
-		if (0 === strlen($emptySaltsFileContents = file_get_contents($emptySaltsFile))) {
+		if (0 === strlen($emptySalts = file_get_contents($emptySaltsFile))) {
 			throw new \Exception('Empty salts file is empty.');
 		}
 
@@ -40,11 +39,12 @@ class WordpressSkeletonConfigSalter {
 			throw new \Exception('Unable to get WP salts from '.self::SALTS_URL);
 		}
 
-		if ($configFileContents === ($replacedConfigFileContents = str_replace($emptySaltsFileContents, $newSalts, $configFileContents))) {
+		if ($config === ($newConfig = str_replace($emptySalts, $newSalts, $config))) {
 			throw new \Exception('Empty salts were not found in the WP config file.');
 		}
 
-		if (false === file_put_contents($configFile, $replacedConfigFileContents)) {
+
+		if (false === file_put_contents($configFile, $newConfig)) {
 			throw new Exception('Unable to write to WP config file');
 		}
 
