@@ -4,7 +4,7 @@ namespace MadeByDavid;
 
 class WordpressSkeletonConfigSalter {
 
-	public static fuction test() {
+	public static function test() {
 		var_dump("test");
 	}
 
