@@ -43,7 +43,7 @@ class WordpressSkeletonConfigSalter {
 		}
 
 		if (false === file_put_contents($configFile, $newConfig)) {
-			throw new Exception('Unable to write to WP config file');
+			throw new \Exception('Unable to write to WP config file');
 		}
 
 		return true;
